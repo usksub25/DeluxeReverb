@@ -2,341 +2,219 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Fender Deluxe Reverb 購入判断チャート</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0f172a" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Amp Finder" />
+<link rel="manifest" href="./manifest.json" />
+<link rel="apple-touch-icon" href="./icon-192.png" />
+<title>Fender Vintage Amp Finder</title>
 <style>
-  :root{
-    --bg:#f5f5f2;
-    --card:#ffffff;
-    --ink:#1f2933;
-    --muted:#667085;
-    --green:#16a34a;
-    --yellow:#d97706;
-    --red:#dc2626;
-    --blue:#2563eb;
-    --line:#e5e7eb;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
-    background:linear-gradient(135deg,#f8fafc,#f3f4f6);
-    color:var(--ink);
-  }
-  header{
-    padding:28px 18px;
-    background:#111827;
-    color:white;
-    text-align:center;
-  }
-  header h1{margin:0 0 8px;font-size:28px}
-  header p{margin:0;color:#d1d5db}
-  main{max-width:1100px;margin:auto;padding:22px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-  .card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:18px;
-    box-shadow:0 8px 24px rgba(0,0,0,.06);
-  }
-  h2{margin:0 0 14px;font-size:20px}
-  h3{margin:16px 0 8px;font-size:16px}
-  .pill{
-    display:inline-block;
-    padding:5px 10px;
-    border-radius:999px;
-    font-size:13px;
-    font-weight:700;
-  }
-  .buy{background:#dcfce7;color:#166534}
-  .maybe{background:#fef3c7;color:#92400e}
-  .avoid{background:#fee2e2;color:#991b1b}
-  .info{background:#dbeafe;color:#1e40af}
-  label{display:block;margin-top:12px;font-weight:700}
-  select,input{
-    width:100%;
-    padding:10px 12px;
-    border:1px solid #d0d5dd;
-    border-radius:10px;
-    font-size:15px;
-    margin-top:6px;
-    background:white;
-  }
-  button{
-    border:0;
-    border-radius:12px;
-    padding:12px 16px;
-    font-size:16px;
-    font-weight:800;
-    cursor:pointer;
-    background:#111827;
-    color:white;
-    width:100%;
-    margin-top:18px;
-  }
-  table{width:100%;border-collapse:collapse;font-size:14px}
-  th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-  th{background:#f9fafb}
-  .result{
-    margin-top:18px;
-    padding:18px;
-    border-radius:16px;
-    border:2px solid var(--line);
-  }
-  .result h2{font-size:24px}
-  .scorebar{height:14px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin:10px 0}
-  .scorebar div{height:100%;width:0%;transition:.4s}
-  .checklist li{margin:8px 0}
-  .flow{
-    display:flex;gap:10px;align-items:center;flex-wrap:wrap;
-    font-weight:800;
-  }
-  .step{
-    padding:10px 14px;border-radius:12px;background:white;border:1px solid var(--line)
-  }
-  .arrow{color:#6b7280}
-  .small{font-size:13px;color:var(--muted)}
-  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-  .tab{
-    padding:9px 12px;border-radius:999px;border:1px solid var(--line);
-    cursor:pointer;background:white;font-weight:700;
-  }
-  .tab.active{background:#111827;color:white}
-  .hidden{display:none}
-  .rank{
-    display:grid;grid-template-columns:42px 1fr 90px;gap:10px;align-items:center;
-    padding:10px;border-bottom:1px solid var(--line)
-  }
-  .rank strong{font-size:18px}
+:root{
+  --bg:#f5f7fb;--card:rgba(255,255,255,.88);--ink:#101828;--sub:#667085;
+  --line:#e4e7ec;--blue:#2563eb;--green:#16a34a;--yellow:#d97706;--red:#dc2626;
+  --dark:#0f172a;--shadow:0 14px 34px rgba(16,24,40,.11);--radius:24px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;background:radial-gradient(circle at top left,#dbeafe 0,#f8fafc 42%,#eef2f7 100%);color:var(--ink);padding-bottom:92px}
+header{position:sticky;top:0;z-index:10;backdrop-filter:blur(20px);background:rgba(15,23,42,.94);color:white;padding:calc(18px + env(safe-area-inset-top)) 18px 17px;box-shadow:0 8px 22px rgba(0,0,0,.18)}
+header h1{font-size:23px;margin:0;font-weight:900;letter-spacing:.01em}
+header p{margin:6px 0 0;color:#cbd5e1;font-size:13px;line-height:1.45}
+main{max-width:1040px;margin:auto;padding:14px}
+.screen{display:none}.screen.active{display:block}
+.card{background:var(--card);border:1px solid rgba(255,255,255,.8);border-radius:var(--radius);padding:17px;box-shadow:var(--shadow);margin-bottom:14px}
+.hero{background:linear-gradient(135deg,#111827,#1e3a8a 55%,#312e81);color:white;border-radius:28px;padding:22px;box-shadow:var(--shadow);margin-bottom:14px}
+.hero h2{font-size:25px;margin:0 0 8px}.hero p{color:#dbeafe;margin:0;line-height:1.6}
+h2{font-size:19px;margin:0 0 14px}h3{font-size:15px;margin:16px 0 8px}.small{font-size:12px;color:var(--sub);line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900;white-space:nowrap}
+.buy{background:#dcfce7;color:#166534}.maybe{background:#fef3c7;color:#92400e}.avoid{background:#fee2e2;color:#991b1b}.info{background:#dbeafe;color:#1e40af}.darkbadge{background:#111827;color:#fff}
+.nav{position:fixed;bottom:0;left:0;right:0;z-index:20;display:grid;grid-template-columns:repeat(6,1fr);padding:8px 7px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);backdrop-filter:blur(20px);border-top:1px solid var(--line)}
+.nav button{border:0;background:transparent;padding:7px 1px;border-radius:14px;font-size:10.5px;color:var(--sub);font-weight:800}.nav button.active{background:#eef2ff;color:#1d4ed8}
+label{display:block;margin-top:12px;font-weight:900;font-size:14px}
+select,input,textarea{width:100%;margin-top:7px;border:1px solid #d0d5dd;border-radius:15px;padding:13px 12px;font-size:16px;background:white}
+textarea{min-height:86px;resize:vertical}
+.primary,.secondary{width:100%;border:0;padding:14px 16px;border-radius:17px;font-size:16px;font-weight:900;margin-top:16px}
+.primary{background:#111827;color:white}.secondary{background:white;color:#111827;border:1px solid var(--line)}
+.result{margin-top:14px;border-radius:22px;padding:18px;background:white;border:1px solid var(--line)}
+.score{display:flex;align-items:end;gap:8px;margin:8px 0 10px}.score strong{font-size:40px;line-height:1}.bar{height:14px;background:#e5e7eb;border-radius:999px;overflow:hidden}.bar div{height:100%;transition:.35s}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:#475467;background:#f9fafb}
+.item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}.item:last-child{border-bottom:0}
+.num{min-width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:#eef2ff;color:#1d4ed8;font-weight:900}
+.kv{display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.kv:last-child{border-bottom:0}.kv b{font-size:14px}.kv span{text-align:right;color:var(--sub);font-size:13px}
+.modelCard{border:1px solid var(--line);background:white;border-radius:18px;padding:14px;margin-bottom:10px}.modelCard h3{margin:0 0 8px;font-size:17px}
+.notice{border-left:5px solid var(--blue);padding:12px;background:#eff6ff;border-radius:14px;color:#1e3a8a;line-height:1.6}.check li{margin:10px 0;line-height:1.5}
+.toggle{display:grid;grid-template-columns:repeat(4,1fr);background:#eef2f7;border-radius:16px;padding:4px;gap:4px}.toggle button{border:0;border-radius:12px;padding:10px 4px;background:transparent;font-weight:900;color:#667085;font-size:12px}.toggle button.active{background:white;color:#111827;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:white;border-radius:999px;padding:8px 10px;font-size:12px;font-weight:800;color:#344054}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fav{background:white;border:1px solid var(--line);border-radius:16px;padding:12px;margin-top:10px}.fav b{display:block;margin-bottom:4px}.fav .actions{display:flex;gap:8px;margin-top:10px}.fav button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;font-weight:800}
+@media (max-width:560px){main{padding:12px}.card{border-radius:20px;padding:15px}.nav{grid-template-columns:repeat(6,1fr)}.nav button{font-size:10px}.row2{grid-template-columns:1fr}header h1{font-size:21px}.hero h2{font-size:23px}.toggle{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 <header>
-  <h1>Fender Deluxe Reverb 購入判断チャート</h1>
-  <p>目的：リセールを守りながら、最終目標の1969〜72年 Silverface Deluxe Reverbへ到達する</p>
+  <h1>Fender Vintage Amp Finder</h1>
+  <p>リセールを守りながら、1969〜72年 Silverface Deluxe Reverbへ到達するためのPWA</p>
 </header>
 
 <main>
-  <section class="card">
-    <h2>最終ルート</h2>
-    <div class="flow">
-      <div class="step">中古DRRI / Princeton</div>
-      <div class="arrow">→</div>
-      <div class="step">損失を抑えて使用</div>
-      <div class="arrow">→</div>
-      <div class="step">良個体を待つ</div>
-      <div class="arrow">→</div>
-      <div class="step">1969〜72 Silverface DR</div>
+<section id="home" class="screen active">
+  <div class="hero">
+    <h2>買うべき個体だけを拾う</h2>
+    <p>新品は避け、中古の底値圏を狙う。つなぎアンプは「いつでも売れること」を最優先。</p>
+  </div>
+  <div class="card">
+    <h2>現在の最適ルート</h2>
+    <div class="item"><div class="num">1</div><div><b>15〜17万円のDRRIを買う</b><div class="small">USA製なら理想。MEX製でも価格と状態が良ければ可。</div></div></div>
+    <div class="item"><div class="num">2</div><div><b>毎日使いながら本命を待つ</b><div class="small">音を楽しみつつ、余計な減価を避ける。</div></div></div>
+    <div class="item"><div class="num">3</div><div><b>1969〜72 Silverface Deluxe Reverbへ移行</b><div class="small">45〜55万円、トランス純正、大改造なしが狙い。</div></div></div>
+  </div>
+  <div class="grid">
+    <div class="card"><h2>即買い条件：DRRI</h2><div class="kv"><b>価格</b><span>15〜17万円</span></div><div class="kv"><b>年式</b><span>1993〜2005優先</span></div><div class="kv"><b>状態</b><span>通常使用OK以上</span></div><div class="kv"><b>改造</b><span>なし</span></div><div class="kv"><b>付属品</b><span>フットスイッチ有利</span></div></div>
+    <div class="card"><h2>本命条件：Silverface</h2><div class="kv"><b>年式</b><span>1969〜72</span></div><div class="kv"><b>価格</b><span>45〜55万円</span></div><div class="kv"><b>トランス</b><span>純正</span></div><div class="kv"><b>整備</b><span>消耗品交換OK</span></div><div class="kv"><b>改造</b><span>大改造なし</span></div></div>
+  </div>
+</section>
+
+<section id="judge" class="screen">
+  <div class="card">
+    <h2>買っていい？判定</h2>
+    <label>モデル</label>
+    <select id="model">
+      <option value="usa_drri">1993〜2001 USA製 DRRI</option>
+      <option value="early_mex_drri">2002〜2005 初期MEX DRRI</option>
+      <option value="mex_drri">2006〜2015 MEX DRRI</option>
+      <option value="current_drri">現行中古 DRRI</option>
+      <option value="new_drri">新品 DRRI</option>
+      <option value="sf_dr">1969〜72 Silverface Deluxe Reverb</option>
+      <option value="sf_princeton">Silverface Princeton Reverb</option>
+      <option value="bassman">Bassman</option>
+      <option value="other">その他 Fender系</option>
+    </select>
+    <div class="row2">
+      <div><label>価格（万円）</label><input id="price" type="number" inputmode="decimal" step="0.5" value="17" /></div>
+      <div><label>想定売却価格（万円）</label><input id="resale" type="number" inputmode="decimal" step="0.5" value="17" /></div>
     </div>
-  </section>
+    <label>状態</label>
+    <select id="condition"><option value="excellent">非常に良い・整備済み</option><option value="good">通常使用OK</option><option value="unknown">未確認が多い</option><option value="bad">不具合あり</option></select>
+    <label>改造・交換</label>
+    <select id="mod"><option value="none">改造なし・純正中心</option><option value="maintenance">消耗品交換のみ</option><option value="speaker_good">有名スピーカー交換</option><option value="speaker_unknown">無名スピーカー交換</option><option value="major">穴あけ・MV追加・トランス交換</option></select>
+    <label>付属品</label>
+    <select id="accessory"><option value="full">フットスイッチ・カバーあり</option><option value="switch">フットスイッチあり</option><option value="none">付属品なし</option></select>
+    <label>URL・メモ</label>
+    <textarea id="itemMemo" placeholder="中古ページURL、ショップ名、気になる点など"></textarea>
+    <button class="primary" onclick="judge()">判定する</button>
+    <button class="secondary" onclick="saveFavorite()">この個体を保存</button>
+    <div id="judgeResult" class="result"></div>
+  </div>
+</section>
 
-  <section class="grid" style="margin-top:16px">
-    <div class="card">
-      <h2>購入判定ツール</h2>
+<section id="compare" class="screen">
+  <div class="card">
+    <h2>モデル比較</h2>
+    <div class="modelCard"><h3>1993〜2001 USA製 DRRI <span class="badge buy">つなぎ最有力</span></h3><p class="small">リセール重視で最も狙いやすい。音が特別に上とは断言できないが、「USA製」「初期」という需要がある。</p><table><tr><th>買値目安</th><td>15〜18万円</td></tr><tr><th>売りやすさ</th><td>高い</td></tr><tr><th>注意点</th><td>状態・整備履歴・付属品</td></tr></table></div>
+    <div class="modelCard"><h3>2002〜2005 初期MEX DRRI <span class="badge maybe">価格次第</span></h3><p class="small">音は十分良い。USA製ほどの付加価値はないため、買値を抑えることが重要。</p><table><tr><th>買値目安</th><td>14〜16万円</td></tr><tr><th>売りやすさ</th><td>普通〜高い</td></tr><tr><th>注意点</th><td>17万円以上は慎重</td></tr></table></div>
+    <div class="modelCard"><h3>1969〜72 Silverface Deluxe Reverb <span class="badge buy">本命</span></h3><p class="small">最終目標。トランス純正、大改造なし、整備済みなら多少高くても価値がある。</p><table><tr><th>買値目安</th><td>45〜55万円</td></tr><tr><th>売りやすさ</th><td>高い</td></tr><tr><th>注意点</th><td>年代より状態とオリジナル度</td></tr></table></div>
+    <div class="modelCard"><h3>Silverface Princeton Reverb <span class="badge info">自宅向き</span></h3><p class="small">毎日家で弾くなら非常に強い。ただし本命のDeluxe Reverb資金を圧迫しない価格で買う。</p><table><tr><th>買値目安</th><td>35〜45万円</td></tr><tr><th>売りやすさ</th><td>高い</td></tr><tr><th>注意点</th><td>高騰気味なので買値管理が重要</td></tr></table></div>
+  </div>
+</section>
 
-      <label>モデル</label>
-      <select id="model">
-        <option value="usa_drri">1993〜2001 USA製 DRRI</option>
-        <option value="mex_drri">2002〜2015 MEX製 DRRI</option>
-        <option value="current_drri">現行中古 DRRI</option>
-        <option value="sf_dr">1969〜72 Silverface Deluxe Reverb</option>
-        <option value="princeton">Silverface Princeton Reverb</option>
-        <option value="new_drri">新品 DRRI</option>
-      </select>
+<section id="market" class="screen">
+  <div class="card">
+    <h2>価格早見表</h2>
+    <div class="toggle"><button class="active" onclick="showPrice('pdrri',this)">DRRI</button><button onclick="showPrice('psf',this)">Silverface</button><button onclick="showPrice('ppr',this)">Princeton</button><button onclick="showPrice('pbass',this)">Bassman</button></div>
+    <div id="pdrri" class="priceBlock"><table><tr><th>価格</th><th>判断</th><th>コメント</th></tr><tr><td>〜15万</td><td><span class="badge buy">即確認</span></td><td>状態が普通なら強い。</td></tr><tr><td>15〜17万</td><td><span class="badge buy">買い</span></td><td>中心価格帯。</td></tr><tr><td>17〜18万</td><td><span class="badge maybe">条件付き</span></td><td>USA製・整備済みなら可。</td></tr><tr><td>18万〜</td><td><span class="badge avoid">慎重</span></td><td>売却損が出やすい。</td></tr><tr><td>新品</td><td><span class="badge avoid">見送り</span></td><td>つなぎ目的には不利。</td></tr></table></div>
+    <div id="psf" class="priceBlock" style="display:none"><table><tr><th>価格</th><th>判断</th><th>コメント</th></tr><tr><td>〜45万</td><td><span class="badge buy">即確認</span></td><td>良個体ならかなり強い。</td></tr><tr><td>45〜50万</td><td><span class="badge buy">買い候補</span></td><td>本命価格帯。</td></tr><tr><td>50〜55万</td><td><span class="badge maybe">状態次第</span></td><td>純正トランスなら可。</td></tr><tr><td>60万〜</td><td><span class="badge avoid">慎重</span></td><td>1968級でなければ高め。</td></tr></table></div>
+    <div id="ppr" class="priceBlock" style="display:none"><table><tr><th>価格</th><th>判断</th><th>コメント</th></tr><tr><td>〜35万</td><td><span class="badge buy">即確認</span></td><td>自宅用ヴィンテージとして強い。</td></tr><tr><td>35〜45万</td><td><span class="badge buy">買い候補</span></td><td>状態次第であり。</td></tr><tr><td>45万〜</td><td><span class="badge maybe">慎重</span></td><td>本命資金を圧迫する。</td></tr></table></div>
+    <div id="pbass" class="priceBlock" style="display:none"><table><tr><th>価格</th><th>判断</th><th>コメント</th></tr><tr><td>安値個体</td><td><span class="badge maybe">要確認</span></td><td>名器だが自宅用途では扱いにくい。</td></tr><tr><td>相場並み</td><td><span class="badge maybe">目的次第</span></td><td>リセールは強いが日常使用とは別問題。</td></tr><tr><td>高値</td><td><span class="badge avoid">慎重</span></td><td>本命Deluxe Reverb資金を圧迫する。</td></tr></table></div>
+  </div>
+</section>
 
-      <label>価格（万円）</label>
-      <input id="price" type="number" min="1" step="0.5" value="17" />
+<section id="photo" class="screen">
+  <div class="card">
+    <h2>写真チェック</h2>
+    <div class="notice">中古サイトで見つけたら、前面・背面・スピーカー・シリアルの4枚を確認。迷ったらこの4枚を送れば判定可能。</div>
+    <ol class="check">
+      <li><b>価格</b><br><span class="small">最初に相場内か確認。高い個体は後回し。</span></li>
+      <li><b>背面全体</b><br><span class="small">スピーカー、トランス、真空管、改造跡を見る。</span></li>
+      <li><b>スピーカーアップ</b><br><span class="small">純正か、有名メーカー交換か、無名交換か。</span></li>
+      <li><b>シャーシ・シリアル</b><br><span class="small">年式、製造国、修理跡の推定。</span></li>
+      <li><b>説明文</b><br><span class="small">リバーブ・トレモロ正常、ガリなし、整備履歴ありなら加点。</span></li>
+    </ol>
+  </div>
+  <div class="card">
+    <h2>見送りサイン</h2>
+    <ul class="check">
+      <li><span class="badge avoid">見送り</span> トランス交換済み</li>
+      <li><span class="badge avoid">見送り</span> 穴あけ・Master Volume追加</li>
+      <li><span class="badge avoid">見送り</span> リバーブ／トレモロ故障</li>
+      <li><span class="badge maybe">注意</span> 写真が少なすぎる</li>
+      <li><span class="badge maybe">注意</span> 整備履歴が曖昧</li>
+      <li><span class="badge maybe">注意</span> 「音出し未確認」</li>
+    </ul>
+  </div>
+</section>
 
-      <label>状態</label>
-      <select id="condition">
-        <option value="excellent">非常に良い・整備済み</option>
-        <option value="good">通常使用OK</option>
-        <option value="unknown">未確認が多い</option>
-        <option value="bad">不具合あり</option>
-      </select>
-
-      <label>改造・交換</label>
-      <select id="mod">
-        <option value="none">改造なし・純正中心</option>
-        <option value="maintenance">消耗品交換のみ</option>
-        <option value="speaker">スピーカー交換あり</option>
-        <option value="major">穴あけ・MV追加・トランス交換</option>
-      </select>
-
-      <label>付属品</label>
-      <select id="accessory">
-        <option value="full">フットスイッチ・カバーあり</option>
-        <option value="switch">フットスイッチあり</option>
-        <option value="none">付属品なし</option>
-      </select>
-
-      <button onclick="judge()">判定する</button>
-
-      <div id="result" class="result">
-        <h2>判定：---</h2>
-        <p>条件を入れて判定してください。</p>
-        <div class="scorebar"><div id="bar"></div></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>優先順位</h2>
-      <div class="rank"><strong>1</strong><div>1969〜70 Silverface Deluxe Reverb<br><span class="small">本命。音・資産価値・所有満足感が最上位。</span></div><span class="pill buy">本命</span></div>
-      <div class="rank"><strong>2</strong><div>1971〜72 Silverface Deluxe Reverb<br><span class="small">予算50万円で現実的。良個体なら強い。</span></div><span class="pill buy">買い</span></div>
-      <div class="rank"><strong>3</strong><div>1993〜2001 USA製 DRRI<br><span class="small">つなぎ最有力。リセールで有利。</span></div><span class="pill buy">つなぎ</span></div>
-      <div class="rank"><strong>4</strong><div>2002〜05 初期MEX DRRI<br><span class="small">価格が安ければ十分優秀。</span></div><span class="pill maybe">条件付き</span></div>
-      <div class="rank"><strong>5</strong><div>現行中古DRRI<br><span class="small">音は良いが、買値を抑えること。</span></div><span class="pill maybe">価格次第</span></div>
-    </div>
-  </section>
-
-  <section class="card" style="margin-top:16px">
-    <h2>価格判断早見表</h2>
-    <div class="tabs">
-      <button class="tab active" onclick="showTab('drri',this)">DRRI</button>
-      <button class="tab" onclick="showTab('sf',this)">Silverface DR</button>
-      <button class="tab" onclick="showTab('pr',this)">Princeton</button>
-    </div>
-
-    <div id="drri">
-      <table>
-        <tr><th>価格</th><th>判断</th><th>理由</th></tr>
-        <tr><td>〜15万円</td><td><span class="pill buy">即確認</span></td><td>状態が普通なら損失リスクが低い。</td></tr>
-        <tr><td>15〜17万円</td><td><span class="pill buy">買い</span></td><td>リセール重視の中心価格帯。</td></tr>
-        <tr><td>17〜18万円</td><td><span class="pill maybe">条件付き</span></td><td>USA製・付属品あり・整備済みなら可。</td></tr>
-        <tr><td>18万円以上</td><td><span class="pill avoid">慎重</span></td><td>売却時の損失が出やすい。</td></tr>
-        <tr><td>新品</td><td><span class="pill avoid">見送り</span></td><td>初期下落を自分で負担するため。</td></tr>
-      </table>
-    </div>
-
-    <div id="sf" class="hidden">
-      <table>
-        <tr><th>価格</th><th>判断</th><th>理由</th></tr>
-        <tr><td>〜45万円</td><td><span class="pill buy">即確認</span></td><td>状態が良ければかなり強い。</td></tr>
-        <tr><td>45〜50万円</td><td><span class="pill buy">買い候補</span></td><td>1969〜72年なら本命価格帯。</td></tr>
-        <tr><td>50〜55万円</td><td><span class="pill maybe">状態次第</span></td><td>トランス純正・整備済みなら可。</td></tr>
-        <tr><td>60万円以上</td><td><span class="pill avoid">慎重</span></td><td>1968 Drip Edge級でない限り高め。</td></tr>
-      </table>
-    </div>
-
-    <div id="pr" class="hidden">
-      <table>
-        <tr><th>価格</th><th>判断</th><th>理由</th></tr>
-        <tr><td>〜35万円</td><td><span class="pill buy">即確認</span></td><td>自宅用ヴィンテージとして非常に強い。</td></tr>
-        <tr><td>35〜45万円</td><td><span class="pill buy">買い候補</span></td><td>状態・年式次第で十分あり。</td></tr>
-        <tr><td>45万円以上</td><td><span class="pill maybe">慎重</span></td><td>Deluxe Reverb本命資金を圧迫する。</td></tr>
-      </table>
-    </div>
-  </section>
-
-  <section class="grid" style="margin-top:16px">
-    <div class="card">
-      <h2>写真チェック順</h2>
-      <ol class="checklist">
-        <li><b>価格</b>：まず相場内か確認。</li>
-        <li><b>背面全体</b>：スピーカー・トランス・真空管を見る。</li>
-        <li><b>スピーカーアップ</b>：純正か交換か。</li>
-        <li><b>シャーシ・シリアル</b>：年式と製造国の確認。</li>
-        <li><b>説明文</b>：リバーブ・トレモロ正常、整備履歴。</li>
-      </ol>
-    </div>
-
-    <div class="card">
-      <h2>見送りサイン</h2>
-      <ul class="checklist">
-        <li><span class="pill avoid">危険</span> トランス交換済み</li>
-        <li><span class="pill avoid">危険</span> 穴あけ改造・Master Volume追加</li>
-        <li><span class="pill avoid">危険</span> リバーブ／トレモロ故障</li>
-        <li><span class="pill maybe">注意</span> 写真が少なすぎる</li>
-        <li><span class="pill maybe">注意</span> 整備履歴が曖昧</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="card" style="margin-top:16px">
-    <h2>最終ルール</h2>
-    <table>
-      <tr><th>目的</th><th>判断基準</th></tr>
-      <tr><td>リセール最優先</td><td>新品は避ける。中古の底値圏だけ買う。</td></tr>
-      <tr><td>つなぎアンプ</td><td>15〜17万円のDRRIが中心。</td></tr>
-      <tr><td>本命</td><td>1969〜72年、45〜55万円、トランス純正、改造少なめ。</td></tr>
-      <tr><td>迷ったら</td><td>写真4枚：前面・背面・スピーカー・シリアルで判断。</td></tr>
-    </table>
-  </section>
+<section id="favorites" class="screen">
+  <div class="card">
+    <h2>保存した個体</h2>
+    <p class="small">判定画面で保存した候補がここに残ります。端末内保存なので、個人メモをGitHubに公開しません。</p>
+    <div id="favoritesList"></div>
+    <button class="secondary" onclick="clearFavorites()">すべて削除</button>
+  </div>
+</section>
 </main>
 
+<nav class="nav">
+  <button class="active" onclick="showScreen('home',this)">ホーム</button>
+  <button onclick="showScreen('judge',this)">判定</button>
+  <button onclick="showScreen('compare',this)">比較</button>
+  <button onclick="showScreen('market',this)">相場</button>
+  <button onclick="showScreen('photo',this)">写真</button>
+  <button onclick="showScreen('favorites',this)">保存</button>
+</nav>
+
 <script>
-function showTab(id, el){
-  ['drri','sf','pr'].forEach(x=>document.getElementById(x).classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-}
-
+let lastJudge = null;
+const modelNames = {usa_drri:'1993〜2001 USA製 DRRI',early_mex_drri:'2002〜2005 初期MEX DRRI',mex_drri:'2006〜2015 MEX DRRI',current_drri:'現行中古 DRRI',new_drri:'新品 DRRI',sf_dr:'1969〜72 Silverface Deluxe Reverb',sf_princeton:'Silverface Princeton Reverb',bassman:'Bassman',other:'その他 Fender系'};
+function showScreen(id, btn){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});if(id==='favorites') renderFavorites();}
+function showPrice(id, btn){document.querySelectorAll('.priceBlock').forEach(b=>b.style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
 function judge(){
-  const model = document.getElementById('model').value;
-  const price = parseFloat(document.getElementById('price').value);
-  const condition = document.getElementById('condition').value;
-  const mod = document.getElementById('mod').value;
-  const accessory = document.getElementById('accessory').value;
-
-  let score = 50;
-  let notes = [];
-
-  const priceRules = {
-    usa_drri: [15,17,18],
-    mex_drri: [14,16,17],
-    current_drri: [14,16,17],
-    new_drri: [0,0,0],
-    sf_dr: [45,50,55],
-    princeton: [35,45,50]
-  };
-
-  if(model === 'new_drri'){
-    score -= 35;
-    notes.push('新品は初期下落を受けやすく、今回のリセール重視方針とは相性が悪い。');
-  } else {
-    const [best, good, limit] = priceRules[model];
-    if(price <= best){ score += 30; notes.push('価格はかなり良い。即確認レベル。'); }
-    else if(price <= good){ score += 20; notes.push('価格は買い候補。状態が良ければ前向き。'); }
-    else if(price <= limit){ score += 5; notes.push('価格はやや高め。付属品や整備内容が必要。'); }
-    else { score -= 25; notes.push('価格が高く、売却時の損失リスクがある。'); }
-  }
-
-  if(model === 'usa_drri'){ score += 15; notes.push('USA製DRRIは検索需要があり、リセール面で有利。'); }
-  if(model === 'sf_dr'){ score += 25; notes.push('本命のSilverface Deluxe Reverb。条件が合えば優先度は最上位。'); }
-  if(model === 'princeton'){ score += 10; notes.push('Princetonは自宅用ヴィンテージとして強いが、本命資金を圧迫しない価格が重要。'); }
-
-  if(condition === 'excellent'){ score += 15; notes.push('整備済み・状態良好は売却時にも強い。'); }
-  if(condition === 'good'){ score += 5; notes.push('通常使用OKなら問題なし。'); }
-  if(condition === 'unknown'){ score -= 15; notes.push('未確認が多い個体は、追加整備費と売却リスクがある。'); }
-  if(condition === 'bad'){ score -= 35; notes.push('不具合ありはリセール重視では避けたい。'); }
-
-  if(mod === 'none'){ score += 15; notes.push('改造なし・純正中心は高評価。'); }
-  if(mod === 'maintenance'){ score += 10; notes.push('消耗品交換はむしろ安心材料。'); }
-  if(mod === 'speaker'){ score -= 5; notes.push('スピーカー交換は音には良くても、リセールでは少し弱い。'); }
-  if(mod === 'major'){ score -= 45; notes.push('大きな改造やトランス交換は見送り寄り。'); }
-
-  if(accessory === 'full'){ score += 8; notes.push('フットスイッチ・カバー付きは売りやすい。'); }
-  if(accessory === 'switch'){ score += 4; notes.push('フットスイッチありはプラス。'); }
-
-  score = Math.max(0, Math.min(100, score));
-
-  let label, cls, color;
-  if(score >= 78){ label = '買い'; cls='buy'; color='#16a34a'; }
-  else if(score >= 55){ label = '条件付きで検討'; cls='maybe'; color='#d97706'; }
-  else { label = '見送り'; cls='avoid'; color='#dc2626'; }
-
-  const result = document.getElementById('result');
-  result.innerHTML = `
-    <h2>判定：<span class="pill ${cls}">${label}</span></h2>
-    <p><b>スコア：${score}/100</b></p>
-    <div class="scorebar"><div style="width:${score}%;background:${color}"></div></div>
-    <h3>理由</h3>
-    <ul>${notes.map(n=>`<li>${n}</li>`).join('')}</ul>
-    <p class="small">目安です。実際は背面写真・スピーカー・トランス・整備履歴で最終判断してください。</p>
-  `;
+  const model=document.getElementById('model').value, price=parseFloat(document.getElementById('price').value||0), resale=parseFloat(document.getElementById('resale').value||0);
+  const condition=document.getElementById('condition').value, mod=document.getElementById('mod').value, accessory=document.getElementById('accessory').value, memo=document.getElementById('itemMemo').value;
+  let score=50, notes=[]; const rules={usa_drri:[15,17,18],early_mex_drri:[14,16,17],mex_drri:[14,16,17],current_drri:[14,16,17],new_drri:[0,0,0],sf_dr:[45,50,55],sf_princeton:[35,45,50],bassman:[0,0,0],other:[10,12,15]};
+  if(model==='new_drri'){score-=38;notes.push('新品DRRIは初期下落を受けやすく、つなぎ目的では不利。');}
+  else if(model==='bassman'){score-=5;notes.push('Bassmanは名器だが、自宅で毎日使う用途ではDeluxe Reverbより扱いにくい。');}
+  else{const [best,good,limit]=rules[model]; if(price<=best){score+=30;notes.push('価格はかなり良い。最初に確認すべき個体。');}else if(price<=good){score+=20;notes.push('価格は買い候補。状態が良ければ前向き。');}else if(price<=limit){score+=5;notes.push('価格はやや高め。付属品・整備済みなどの加点が必要。');}else{score-=25;notes.push('価格が高め。売却時の損失リスクがある。');}}
+  const loss = price - resale; if(price>0 && resale>0){ if(loss<=0){score+=12;notes.push('想定売却価格が購入価格以上。リセール面では非常に強い。');}else if(loss<=2){score+=6;notes.push('想定損失は2万円以内。つなぎとして許容範囲。');}else if(loss<=4){score-=5;notes.push('想定損失がやや大きい。値下げ交渉したい。');}else{score-=18;notes.push('想定損失が大きい。リセール重視なら見送り寄り。');}}
+  if(model==='usa_drri'){score+=16;notes.push('USA製DRRIは「USA製」需要があり、リセール面で有利。');}
+  if(model==='early_mex_drri'){score+=8;notes.push('初期MEXは価格がこなれていれば十分狙える。');}
+  if(model==='sf_dr'){score+=28;notes.push('本命のSilverface Deluxe Reverb。条件が合えば最優先。');}
+  if(model==='sf_princeton'){score+=12;notes.push('Princetonは自宅用ヴィンテージとして強いが、本命資金を圧迫しない価格が重要。');}
+  if(model==='other'){score-=10;notes.push('本命ルートから外れるため、リセール目的では慎重。');}
+  if(condition==='excellent'){score+=16;notes.push('整備済み・状態良好は売却時にも強い。');}
+  if(condition==='good'){score+=6;notes.push('通常使用OKなら問題なし。');}
+  if(condition==='unknown'){score-=16;notes.push('未確認が多い個体は、追加整備費と売却リスクがある。');}
+  if(condition==='bad'){score-=38;notes.push('不具合ありはリセール重視では避けたい。');}
+  if(mod==='none'){score+=16;notes.push('改造なし・純正中心は高評価。');}
+  if(mod==='maintenance'){score+=11;notes.push('消耗品交換はむしろ安心材料。');}
+  if(mod==='speaker_good'){score-=2;notes.push('有名スピーカー交換は音には良い場合もあるが、純正よりリセールは少し弱い。');}
+  if(mod==='speaker_unknown'){score-=14;notes.push('無名スピーカー交換は売却時に説明しづらい。');}
+  if(mod==='major'){score-=48;notes.push('大きな改造やトランス交換は見送り寄り。');}
+  if(accessory==='full'){score+=8;notes.push('フットスイッチ・カバー付きは売りやすい。');}
+  if(accessory==='switch'){score+=4;notes.push('フットスイッチありはプラス。');}
+  if(accessory==='none'){score-=2;notes.push('付属品なしは大きな問題ではないが、売却時の訴求は弱い。');}
+  score=Math.max(0,Math.min(100,Math.round(score)));
+  let label,cls,color,action; if(score>=78){label='買い';cls='buy';color='var(--green)';action='写真と整備履歴を確認して、問題なければ前向きに購入候補。';}else if(score>=55){label='条件付きで検討';cls='maybe';color='var(--yellow)';action='追加写真・整備履歴・付属品を確認。値下げ交渉できるなら候補。';}else{label='見送り';cls='avoid';color='var(--red)';action='リセール重視なら無理に買わない。次の個体を待つ。';}
+  lastJudge={date:new Date().toLocaleString('ja-JP'),model:modelNames[model],price,resale,loss:price-resale,score,label,memo};
+  document.getElementById('judgeResult').innerHTML=`<div class="score"><strong>${score}</strong><span>/100</span><span class="badge ${cls}">${label}</span></div><div class="bar"><div style="width:${score}%;background:${color}"></div></div><h3>次の行動</h3><p>${action}</p><h3>リセール見込み</h3><p>購入 ${price}万円 → 想定売却 ${resale}万円 / 想定損失 ${Math.round((price-resale)*10)/10}万円</p><h3>理由</h3><ul>${notes.map(n=>`<li>${n}</li>`).join('')}</ul><p class="small">最終判断には、前面・背面・スピーカー・シリアルの写真が必要です。</p>`;
 }
+function saveFavorite(){ if(!lastJudge) judge(); const arr=JSON.parse(localStorage.getItem('favorites')||'[]'); arr.unshift(lastJudge); localStorage.setItem('favorites',JSON.stringify(arr.slice(0,30))); alert('保存しました');}
+function renderFavorites(){const arr=JSON.parse(localStorage.getItem('favorites')||'[]'); const el=document.getElementById('favoritesList'); if(!arr.length){el.innerHTML='<p class="small">まだ保存した個体はありません。</p>';return;} el.innerHTML=arr.map((f,i)=>`<div class="fav"><b>${f.model}</b><span class="badge ${f.label==='買い'?'buy':f.label==='見送り'?'avoid':'maybe'}">${f.label} ${f.score}/100</span><div class="small">${f.date}</div><div class="small">購入 ${f.price}万円 → 売却 ${f.resale}万円 / 損失 ${Math.round(f.loss*10)/10}万円</div>${f.memo?`<p>${escapeHtml(f.memo)}</p>`:''}<div class="actions"><button onclick="deleteFavorite(${i})">削除</button></div></div>`).join('');}
+function deleteFavorite(i){const arr=JSON.parse(localStorage.getItem('favorites')||'[]');arr.splice(i,1);localStorage.setItem('favorites',JSON.stringify(arr));renderFavorites();}
+function clearFavorites(){if(confirm('保存した個体をすべて削除しますか？')){localStorage.removeItem('favorites');renderFavorites();}}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));}
 judge();
 </script>
 </body>
