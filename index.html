@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fender Deluxe Reverb 購入判断チャート</title>
+<style>
+  :root{
+    --bg:#f5f5f2;
+    --card:#ffffff;
+    --ink:#1f2933;
+    --muted:#667085;
+    --green:#16a34a;
+    --yellow:#d97706;
+    --red:#dc2626;
+    --blue:#2563eb;
+    --line:#e5e7eb;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+    background:linear-gradient(135deg,#f8fafc,#f3f4f6);
+    color:var(--ink);
+  }
+  header{
+    padding:28px 18px;
+    background:#111827;
+    color:white;
+    text-align:center;
+  }
+  header h1{margin:0 0 8px;font-size:28px}
+  header p{margin:0;color:#d1d5db}
+  main{max-width:1100px;margin:auto;padding:22px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:18px;
+    box-shadow:0 8px 24px rgba(0,0,0,.06);
+  }
+  h2{margin:0 0 14px;font-size:20px}
+  h3{margin:16px 0 8px;font-size:16px}
+  .pill{
+    display:inline-block;
+    padding:5px 10px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+  }
+  .buy{background:#dcfce7;color:#166534}
+  .maybe{background:#fef3c7;color:#92400e}
+  .avoid{background:#fee2e2;color:#991b1b}
+  .info{background:#dbeafe;color:#1e40af}
+  label{display:block;margin-top:12px;font-weight:700}
+  select,input{
+    width:100%;
+    padding:10px 12px;
+    border:1px solid #d0d5dd;
+    border-radius:10px;
+    font-size:15px;
+    margin-top:6px;
+    background:white;
+  }
+  button{
+    border:0;
+    border-radius:12px;
+    padding:12px 16px;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+    background:#111827;
+    color:white;
+    width:100%;
+    margin-top:18px;
+  }
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:#f9fafb}
+  .result{
+    margin-top:18px;
+    padding:18px;
+    border-radius:16px;
+    border:2px solid var(--line);
+  }
+  .result h2{font-size:24px}
+  .scorebar{height:14px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin:10px 0}
+  .scorebar div{height:100%;width:0%;transition:.4s}
+  .checklist li{margin:8px 0}
+  .flow{
+    display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+    font-weight:800;
+  }
+  .step{
+    padding:10px 14px;border-radius:12px;background:white;border:1px solid var(--line)
+  }
+  .arrow{color:#6b7280}
+  .small{font-size:13px;color:var(--muted)}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .tab{
+    padding:9px 12px;border-radius:999px;border:1px solid var(--line);
+    cursor:pointer;background:white;font-weight:700;
+  }
+  .tab.active{background:#111827;color:white}
+  .hidden{display:none}
+  .rank{
+    display:grid;grid-template-columns:42px 1fr 90px;gap:10px;align-items:center;
+    padding:10px;border-bottom:1px solid var(--line)
+  }
+  .rank strong{font-size:18px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Fender Deluxe Reverb 購入判断チャート</h1>
+  <p>目的：リセールを守りながら、最終目標の1969〜72年 Silverface Deluxe Reverbへ到達する</p>
+</header>
+
+<main>
+  <section class="card">
+    <h2>最終ルート</h2>
+    <div class="flow">
+      <div class="step">中古DRRI / Princeton</div>
+      <div class="arrow">→</div>
+      <div class="step">損失を抑えて使用</div>
+      <div class="arrow">→</div>
+      <div class="step">良個体を待つ</div>
+      <div class="arrow">→</div>
+      <div class="step">1969〜72 Silverface DR</div>
+    </div>
+  </section>
+
+  <section class="grid" style="margin-top:16px">
+    <div class="card">
+      <h2>購入判定ツール</h2>
+
+      <label>モデル</label>
+      <select id="model">
+        <option value="usa_drri">1993〜2001 USA製 DRRI</option>
+        <option value="mex_drri">2002〜2015 MEX製 DRRI</option>
+        <option value="current_drri">現行中古 DRRI</option>
+        <option value="sf_dr">1969〜72 Silverface Deluxe Reverb</option>
+        <option value="princeton">Silverface Princeton Reverb</option>
+        <option value="new_drri">新品 DRRI</option>
+      </select>
+
+      <label>価格（万円）</label>
+      <input id="price" type="number" min="1" step="0.5" value="17" />
+
+      <label>状態</label>
+      <select id="condition">
+        <option value="excellent">非常に良い・整備済み</option>
+        <option value="good">通常使用OK</option>
+        <option value="unknown">未確認が多い</option>
+        <option value="bad">不具合あり</option>
+      </select>
+
+      <label>改造・交換</label>
+      <select id="mod">
+        <option value="none">改造なし・純正中心</option>
+        <option value="maintenance">消耗品交換のみ</option>
+        <option value="speaker">スピーカー交換あり</option>
+        <option value="major">穴あけ・MV追加・トランス交換</option>
+      </select>
+
+      <label>付属品</label>
+      <select id="accessory">
+        <option value="full">フットスイッチ・カバーあり</option>
+        <option value="switch">フットスイッチあり</option>
+        <option value="none">付属品なし</option>
+      </select>
+
+      <button onclick="judge()">判定する</button>
+
+      <div id="result" class="result">
+        <h2>判定：---</h2>
+        <p>条件を入れて判定してください。</p>
+        <div class="scorebar"><div id="bar"></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>優先順位</h2>
+      <div class="rank"><strong>1</strong><div>1969〜70 Silverface Deluxe Reverb<br><span class="small">本命。音・資産価値・所有満足感が最上位。</span></div><span class="pill buy">本命</span></div>
+      <div class="rank"><strong>2</strong><div>1971〜72 Silverface Deluxe Reverb<br><span class="small">予算50万円で現実的。良個体なら強い。</span></div><span class="pill buy">買い</span></div>
+      <div class="rank"><strong>3</strong><div>1993〜2001 USA製 DRRI<br><span class="small">つなぎ最有力。リセールで有利。</span></div><span class="pill buy">つなぎ</span></div>
+      <div class="rank"><strong>4</strong><div>2002〜05 初期MEX DRRI<br><span class="small">価格が安ければ十分優秀。</span></div><span class="pill maybe">条件付き</span></div>
+      <div class="rank"><strong>5</strong><div>現行中古DRRI<br><span class="small">音は良いが、買値を抑えること。</span></div><span class="pill maybe">価格次第</span></div>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:16px">
+    <h2>価格判断早見表</h2>
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('drri',this)">DRRI</button>
+      <button class="tab" onclick="showTab('sf',this)">Silverface DR</button>
+      <button class="tab" onclick="showTab('pr',this)">Princeton</button>
+    </div>
+
+    <div id="drri">
+      <table>
+        <tr><th>価格</th><th>判断</th><th>理由</th></tr>
+        <tr><td>〜15万円</td><td><span class="pill buy">即確認</span></td><td>状態が普通なら損失リスクが低い。</td></tr>
+        <tr><td>15〜17万円</td><td><span class="pill buy">買い</span></td><td>リセール重視の中心価格帯。</td></tr>
+        <tr><td>17〜18万円</td><td><span class="pill maybe">条件付き</span></td><td>USA製・付属品あり・整備済みなら可。</td></tr>
+        <tr><td>18万円以上</td><td><span class="pill avoid">慎重</span></td><td>売却時の損失が出やすい。</td></tr>
+        <tr><td>新品</td><td><span class="pill avoid">見送り</span></td><td>初期下落を自分で負担するため。</td></tr>
+      </table>
+    </div>
+
+    <div id="sf" class="hidden">
+      <table>
+        <tr><th>価格</th><th>判断</th><th>理由</th></tr>
+        <tr><td>〜45万円</td><td><span class="pill buy">即確認</span></td><td>状態が良ければかなり強い。</td></tr>
+        <tr><td>45〜50万円</td><td><span class="pill buy">買い候補</span></td><td>1969〜72年なら本命価格帯。</td></tr>
+        <tr><td>50〜55万円</td><td><span class="pill maybe">状態次第</span></td><td>トランス純正・整備済みなら可。</td></tr>
+        <tr><td>60万円以上</td><td><span class="pill avoid">慎重</span></td><td>1968 Drip Edge級でない限り高め。</td></tr>
+      </table>
+    </div>
+
+    <div id="pr" class="hidden">
+      <table>
+        <tr><th>価格</th><th>判断</th><th>理由</th></tr>
+        <tr><td>〜35万円</td><td><span class="pill buy">即確認</span></td><td>自宅用ヴィンテージとして非常に強い。</td></tr>
+        <tr><td>35〜45万円</td><td><span class="pill buy">買い候補</span></td><td>状態・年式次第で十分あり。</td></tr>
+        <tr><td>45万円以上</td><td><span class="pill maybe">慎重</span></td><td>Deluxe Reverb本命資金を圧迫する。</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="grid" style="margin-top:16px">
+    <div class="card">
+      <h2>写真チェック順</h2>
+      <ol class="checklist">
+        <li><b>価格</b>：まず相場内か確認。</li>
+        <li><b>背面全体</b>：スピーカー・トランス・真空管を見る。</li>
+        <li><b>スピーカーアップ</b>：純正か交換か。</li>
+        <li><b>シャーシ・シリアル</b>：年式と製造国の確認。</li>
+        <li><b>説明文</b>：リバーブ・トレモロ正常、整備履歴。</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>見送りサイン</h2>
+      <ul class="checklist">
+        <li><span class="pill avoid">危険</span> トランス交換済み</li>
+        <li><span class="pill avoid">危険</span> 穴あけ改造・Master Volume追加</li>
+        <li><span class="pill avoid">危険</span> リバーブ／トレモロ故障</li>
+        <li><span class="pill maybe">注意</span> 写真が少なすぎる</li>
+        <li><span class="pill maybe">注意</span> 整備履歴が曖昧</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:16px">
+    <h2>最終ルール</h2>
+    <table>
+      <tr><th>目的</th><th>判断基準</th></tr>
+      <tr><td>リセール最優先</td><td>新品は避ける。中古の底値圏だけ買う。</td></tr>
+      <tr><td>つなぎアンプ</td><td>15〜17万円のDRRIが中心。</td></tr>
+      <tr><td>本命</td><td>1969〜72年、45〜55万円、トランス純正、改造少なめ。</td></tr>
+      <tr><td>迷ったら</td><td>写真4枚：前面・背面・スピーカー・シリアルで判断。</td></tr>
+    </table>
+  </section>
+</main>
+
+<script>
+function showTab(id, el){
+  ['drri','sf','pr'].forEach(x=>document.getElementById(x).classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function judge(){
+  const model = document.getElementById('model').value;
+  const price = parseFloat(document.getElementById('price').value);
+  const condition = document.getElementById('condition').value;
+  const mod = document.getElementById('mod').value;
+  const accessory = document.getElementById('accessory').value;
+
+  let score = 50;
+  let notes = [];
+
+  const priceRules = {
+    usa_drri: [15,17,18],
+    mex_drri: [14,16,17],
+    current_drri: [14,16,17],
+    new_drri: [0,0,0],
+    sf_dr: [45,50,55],
+    princeton: [35,45,50]
+  };
+
+  if(model === 'new_drri'){
+    score -= 35;
+    notes.push('新品は初期下落を受けやすく、今回のリセール重視方針とは相性が悪い。');
+  } else {
+    const [best, good, limit] = priceRules[model];
+    if(price <= best){ score += 30; notes.push('価格はかなり良い。即確認レベル。'); }
+    else if(price <= good){ score += 20; notes.push('価格は買い候補。状態が良ければ前向き。'); }
+    else if(price <= limit){ score += 5; notes.push('価格はやや高め。付属品や整備内容が必要。'); }
+    else { score -= 25; notes.push('価格が高く、売却時の損失リスクがある。'); }
+  }
+
+  if(model === 'usa_drri'){ score += 15; notes.push('USA製DRRIは検索需要があり、リセール面で有利。'); }
+  if(model === 'sf_dr'){ score += 25; notes.push('本命のSilverface Deluxe Reverb。条件が合えば優先度は最上位。'); }
+  if(model === 'princeton'){ score += 10; notes.push('Princetonは自宅用ヴィンテージとして強いが、本命資金を圧迫しない価格が重要。'); }
+
+  if(condition === 'excellent'){ score += 15; notes.push('整備済み・状態良好は売却時にも強い。'); }
+  if(condition === 'good'){ score += 5; notes.push('通常使用OKなら問題なし。'); }
+  if(condition === 'unknown'){ score -= 15; notes.push('未確認が多い個体は、追加整備費と売却リスクがある。'); }
+  if(condition === 'bad'){ score -= 35; notes.push('不具合ありはリセール重視では避けたい。'); }
+
+  if(mod === 'none'){ score += 15; notes.push('改造なし・純正中心は高評価。'); }
+  if(mod === 'maintenance'){ score += 10; notes.push('消耗品交換はむしろ安心材料。'); }
+  if(mod === 'speaker'){ score -= 5; notes.push('スピーカー交換は音には良くても、リセールでは少し弱い。'); }
+  if(mod === 'major'){ score -= 45; notes.push('大きな改造やトランス交換は見送り寄り。'); }
+
+  if(accessory === 'full'){ score += 8; notes.push('フットスイッチ・カバー付きは売りやすい。'); }
+  if(accessory === 'switch'){ score += 4; notes.push('フットスイッチありはプラス。'); }
+
+  score = Math.max(0, Math.min(100, score));
+
+  let label, cls, color;
+  if(score >= 78){ label = '買い'; cls='buy'; color='#16a34a'; }
+  else if(score >= 55){ label = '条件付きで検討'; cls='maybe'; color='#d97706'; }
+  else { label = '見送り'; cls='avoid'; color='#dc2626'; }
+
+  const result = document.getElementById('result');
+  result.innerHTML = `
+    <h2>判定：<span class="pill ${cls}">${label}</span></h2>
+    <p><b>スコア：${score}/100</b></p>
+    <div class="scorebar"><div style="width:${score}%;background:${color}"></div></div>
+    <h3>理由</h3>
+    <ul>${notes.map(n=>`<li>${n}</li>`).join('')}</ul>
+    <p class="small">目安です。実際は背面写真・スピーカー・トランス・整備履歴で最終判断してください。</p>
+  `;
+}
+judge();
+</script>
+</body>
+</html>
