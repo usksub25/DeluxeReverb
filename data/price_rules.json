@@ -1,0 +1,23 @@
+{
+  "usa_drri_1993_2001":{"label":"1993〜2001 USA DRRI","instant_check_max":150000,"buy_max":170000,"conditional_max":180000,"avoid_above":190000,"notes":"USA製需要があるため、状態良好ならつなぎ最有力。"},
+  "mex_drri_2002_2005":{"label":"2002〜2005 Mexico DRRI","instant_check_max":140000,"buy_max":160000,"conditional_max":170000,"avoid_above":180000,"notes":"17万円以上は付属品と整備履歴が必要。"},
+  "mex_drri_2006_2015":{"label":"2006〜2015 Mexico DRRI","instant_check_max":130000,"buy_max":160000,"conditional_max":170000,"avoid_above":180000,"notes":"実用性は高いが、リセール優先なら買値を抑える。"},
+  "current_drri":{"label":"Current DRRI","instant_check_max":130000,"buy_max":160000,"conditional_max":170000,"avoid_above":180000,"notes":"新品は避け、中古底値圏のみ候補。"},
+  "sf_deluxe_reverb_1969_1972":{"label":"1969〜72 Silverface Deluxe Reverb","instant_check_max":450000,"buy_max":500000,"conditional_max":550000,"avoid_above":600000,"notes":"本命。純正トランス、大改造なし、整備済みなら強い。"},
+  "bf_deluxe_reverb_1964_1967":{"label":"1964〜67 Blackface Deluxe Reverb","instant_check_max":700000,"buy_max":850000,"conditional_max":950000,"avoid_above":1100000,"notes":"資産価値は最高級だが、予算効率には注意。"},
+  "drip_edge_deluxe_reverb_1968":{"label":"1968 Drip Edge Deluxe Reverb","instant_check_max":550000,"buy_max":650000,"conditional_max":700000,"avoid_above":800000,"notes":"人気が高い。純正度が価格を左右する。"},
+  "sf_deluxe_reverb_1973_1976":{"label":"1973〜76 Silverface Deluxe Reverb","instant_check_max":380000,"buy_max":450000,"conditional_max":500000,"avoid_above":550000,"notes":"実用機として優秀。1969〜72より一段安く買う。"},
+  "pull_boost_deluxe_reverb_1977_1979":{"label":"1977〜79 Pull Boost Deluxe Reverb","instant_check_max":280000,"buy_max":350000,"conditional_max":400000,"avoid_above":450000,"notes":"安い実用機としてのみ検討。"},
+  "custom_64_deluxe_reverb":{"label":"64 Custom Deluxe Reverb","instant_check_max":260000,"buy_max":310000,"conditional_max":340000,"avoid_above":380000,"notes":"良いが、ヴィンテージ資金との兼ね合いを見る。"},
+  "sf_princeton_reverb_1968_1972":{"label":"1968〜72 Silverface Princeton Reverb","instant_check_max":350000,"buy_max":420000,"conditional_max":450000,"avoid_above":520000,"notes":"自宅用途に強く、買値が合えば候補。"},
+  "sf_princeton_reverb_1973_1979":{"label":"1973〜79 Silverface Princeton Reverb","instant_check_max":300000,"buy_max":380000,"conditional_max":420000,"avoid_above":480000,"notes":"家庭用として優秀。高値掴みを避ける。"},
+  "bf_princeton_reverb":{"label":"Blackface Princeton Reverb","instant_check_max":650000,"buy_max":800000,"conditional_max":900000,"avoid_above":1000000,"notes":"自宅用と資産性は強いが高額。"},
+  "prri_65":{"label":"65 Princeton Reverb Reissue","instant_check_max":100000,"buy_max":130000,"conditional_max":140000,"avoid_above":160000,"notes":"実用機。資産性より買値重視。"},
+  "custom_68_princeton_reverb":{"label":"68 Custom Princeton Reverb","instant_check_max":90000,"buy_max":120000,"conditional_max":130000,"avoid_above":150000,"notes":"安く買えるなら自宅用に良い。"},
+  "bassman":{"label":"Bassman","instant_check_max":250000,"buy_max":400000,"conditional_max":500000,"avoid_above":650000,"notes":"名器だが自宅用途では別評価。"},
+  "vibrolux_reverb":{"label":"Vibrolux Reverb","instant_check_max":350000,"buy_max":550000,"conditional_max":650000,"avoid_above":750000,"notes":"サイズと音量を許容できる場合のみ。"},
+  "super_reverb":{"label":"Super Reverb","instant_check_max":300000,"buy_max":500000,"conditional_max":600000,"avoid_above":700000,"notes":"家庭用には大きい。価格が安い場合のみ慎重に。"},
+  "twin_reverb":{"label":"Twin Reverb","instant_check_max":180000,"buy_max":300000,"conditional_max":400000,"avoid_above":500000,"notes":"重量と音量で買い手が限られる。"},
+  "champ":{"label":"Champ","instant_check_max":120000,"buy_max":220000,"conditional_max":280000,"avoid_above":350000,"notes":"自宅用小型ヴィンテージとしてあり。"},
+  "vibro_champ":{"label":"Vibro Champ","instant_check_max":150000,"buy_max":260000,"conditional_max":320000,"avoid_above":380000,"notes":"自宅用に強いが高騰個体は慎重。"}
+}
